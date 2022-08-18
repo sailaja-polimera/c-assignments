@@ -1,0 +1,41 @@
+                                                 Datatypes
+
+#include <stdio.h>  //headerfile consists of printf and scanf functions(predefined functions) 
+void main()         //main function
+{ 
+ int a = 5.5;            //Initialization of a of int type
+ signed int b=32764;   //Initialization of b of signed int type
+ unsigned int c=-675;  //Initialization of c of unsigned int type
+ signed short d=32769; //Initialization of d of signed short type
+ unsigned short e=-4;  //Initialization of e of unsigned short type
+ char f = 'b';         //Initialization of f of character type
+ signed char i='z';    //Initialization of i of signed character type
+ unsigned char j='A';  //Initialization of j of unsigned character type
+ float g = 7.2357;     //Initialization of g of float type
+ double h = 7134.2357455;  //Initialization of h of double type
+ long double k=234476.65653;  //Initialization of k of long double type
+ printf("The integer value is: %d \n", a);    //printing the integer value
+ printf("The signed int value is: %d \n", b);  //printing the signed integer value 
+  printf("The unsigned int value is: %u \n", c);  //printing the unsigned integer value 
+ printf("The signed short value is: %d \n", d);   //printing the signed short value which ranges from-32768-->32767
+ printf("The unsigned short value is: %u \n", e);  //printing the unsigned short value which ranges from 0-->65535
+ printf("The character value is: %c \n", f);       //printing the character
+ printf("The signed character value is: %d \n", i);  //printing the ASCII value of signed character ranges from -127-->127
+ printf("The unsigned character value is: %d \n", j);  //printing the ASCII value of unsigned character ranges from 0-->255
+ printf("The float value is: %f \n", g);             //printing the floating values 
+ printf("The double value is: %lf \n", h);           //printing the double value 
+ printf("The long double value is: %Lf \n", k);   //printing the long double value
+ }
+ 
+Output:
+The integer value is: 5
+The signed int value is: 32764
+The unsigned int value is: 4294966621
+The signed short value is: -32767
+The unsigned short value is: 65532
+The character value is: b
+The signed character value is: 122
+The unsigned character value is: 65
+The float value is: 7.235700
+The double value is: 7134.23574
+The long double value is: 234476.656530
