@@ -1,0 +1,21 @@
+                                   Area and Circumference of circle
+
+
+#include <stdio.h>      //headerfile consists of prinf and scanf functions
+const int PI=3.14;      //initialization of constant variable PI
+int main()              //main function
+{
+    int r;              //declaration of radius r of int type
+    float A,C;          //declaration of A and C of float type
+    printf("Enter radius of circle:");   
+    scanf("%d",&r);     //reading the radius from keyboard
+    A=PI*r*r;           //performing area of circle
+    printf("Area of circle is:%.3f \n",A);   //printing area of the circle
+    C=2*PI*r;           //performing Circumference of circle
+    printf("Circumference of circle is:%.4f",C);  //printing the circumferenc of circle
+    return 0;           //return type  
+}
+ Output:
+ Enter radius of circle:2
+ Area of circle is:12.000
+ Circumference of circle is:12.0000
