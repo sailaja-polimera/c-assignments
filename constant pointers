@@ -1,0 +1,32 @@
+#include <stdio.h>  
+int main()  
+{  
+    int a=1;  
+    int b=2;  
+    int *const ptr;  //declaration of constant pointer of type int
+    ptr=&a;  //storing address of a
+    ptr=&b;  //storing address of b
+    printf("Value of ptr is :%d",*ptr);  // prints error because constant pointer cannot point to more than one variable.
+    return 0;  
+}  
+
+output:
+main.c: In function ‘main’:
+main.c:52:8: error: assignment of read-only variable ‘ptr’
+   52 |     ptr=&a;
+      |        ^
+main.c:53:8: error: assignment of read-only variable ‘ptr’
+   53 |     ptr=&b;
+      |        ^
+      
+#include<stdio.h>
+int main()  
+{  
+    int a=100;  
+    int b=200;  
+    const int* ptr;  
+    ptr=&b;  
+    *ptr=300;  
+    printf("Value of ptr is :%d",*ptr);  
+    return 0;  
+}  
