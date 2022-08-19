@@ -1,0 +1,44 @@
+/*program to explain all operators using different data types*/
+#include <stdio.h> //header file includes scanf and printf fun
+
+int main() //program execution starts from here
+{
+   int a=4,b=5,c=2;       // initialisation of variables of type int 
+   float d=6.2,e=4.3;     //initialization of variables of type float
+   printf("%d,%d,%f,%f\n",a+b, b-c,d*e,d/e);      //performing arithmetic Operations
+   d+=e;                       // performing addition using assignment operator
+   printf("%f\n",d);           //printing value of d
+   a|=2;                       //performing OR using assignment operator 
+   printf("%d\n",a);           //printing value of a
+   b^=3;                       //performing XOR using assignment operator
+   printf("%d",b);             //printing value of b
+   
+    if (a>b && b!=0)//performing logical and relational operators at a time 
+      printf("&& Operator : Both conditions are true\n");
+   if (c>d || d!=20)
+      printf("|| Operator : Only one condition is true\n");
+   if (!(d>e && e!=0))
+      printf("! Operator : Both conditions are true\n");
+   else
+      printf("! Operator : Both conditions are true. But, status is inverted as false\n");
+      printf("a&b = %d\n",a&b);//bitwise AND operator
+      printf("a^b = %d\n",a^b);//bitwise XOR operator
+      printf("a|b= %d\n",a|b);//bitwise OR operator
+    return 0;
+}
+output:
+
+9,3,26.660000,1.441860
+10.500000
+6
+6|| operator : Only one condition is true
+! operator : Both condition are true. But, status is inverted
+as false
+a&b = 6
+a^b = 5
+a|b= 6
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privac
