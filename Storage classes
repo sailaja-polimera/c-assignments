@@ -1,0 +1,79 @@
+/* program about storage classes */
+1.Auto storage class:
+#include <stdio.h>   //header file include printf and scanf function
+int main( )     //program starts from main function
+{
+  auto int j = 1;   //intilialization of auto varaiable 
+  {
+    auto int j= 2;   //intilialization of auto varaiable 
+    {
+      auto int j = 3;  //intilialization of auto varaiable 
+      printf ( "%d", j);  //print 3 since it has block  scope
+    }
+    printf ( " %d",j);  //print 2 since it has local scope
+  }
+  printf( " %d", j);  //print 1 since it has method scope
+    return 0;      //return type
+}
+
+output:
+3 2 1
+
+2.register:
+
+#include <stdio.h>  //header file include printf and scanf function
+  int main()  //program starts from main function
+{
+   register int x = 5;// initialiazation of x variable(function scope)
+   int i;              //declaration of variable i of type int 
+
+   printf("%d\n",x); // 10 will be printed here  because it is the given local value of p
+   printf("%d",i);//A variable x has memory allocation in the CPU register. Here, the initial value of i, by default, is 0.
+
+    return 0;  //return type
+}
+output:
+5
+34287
+
+3.static:
+
+#include <stdio.h>  //header file include printf and scanf function
+int func()
+{
+static int a=0;//local type of the static variable
+int b=0;// local type of auto variable it defaulty takes auto
+a++;//incrementing the variable
+b++;
+printf("a= %d and b= %d\n", a, b);//scope will be within the same block(until the completion of the program a variable will be alive but b disappears)
+}
+int main() //program execution starts from here
+{
+func();// calling function
+func();
+func();
+return 0;//return type
+}
+output:
+
+a= 1 and b= 1
+a= 2 and b= 1
+a= 3 and b= 1
+
+4. extern
+
+First File: main.c
+#include <stdio.h
+#include <stdio.h>  //header file include printf and scanf function
+extern i;  //declaration of extern variable 
+int main()  //main function
+{
+   printf("value of the external integer is = %d\n", i);  //print 20 since it has initialized in original file
+   return 0;   //return type
+   }
+Second File: original.c
+#include<stdio.h>   //header file include printf and scanf function
+int i= 20;//through out the program like global it may access
+output:
+
+value of the external integer is = 20
