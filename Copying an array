@@ -1,0 +1,52 @@
+#include <stdio.h>  //header file
+void copy(int *x,int *y,int n)  //creating a function declaration 
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        *(y+i)=*(x+i);    
+    }
+    printf("\nAfter copying the elements at array 2 are:");
+    for(i=0;i<n;i++)
+    { 
+       printf("%d ",*(y+i));
+    }
+}
+int main()
+{
+    int arr1[50],arr2[50];
+    int i,n;
+    int *x;
+    int *y;
+    x=arr1;
+    y=arr2;
+    printf("Enter the size of arrays:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {   
+        printf("Element at  position %d:",i);
+        scanf("%d",&*(arr1+i));
+    }
+    printf("The elements at array 1 are:");
+    for(i=0;i<n;i++)
+    {
+    
+        printf("%d ",*(arr1+i));
+    }
+    
+    
+    
+    copy(arr1,arr2,n);
+    return 0;
+}
+
+Output:
+Enter the size of arrays:5
+Element at  position 0:23
+Element at  position 1:43
+Element at  position 2:76
+Element at  position 3:23
+Element at  position 4:32
+The elements at array 1 are:23 43 76 23 32 
+After copying the elements at array 2 are:23 43 76 23 32 
+
