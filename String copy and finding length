@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include<string.h>//header file
+void copy(char *x,char *y)//creating a function declaration 
+{
+   while(*x!='\0')
+    {
+        *y=*x;
+        x++;
+        y++;
+    }
+    *y='\0';
+}
+int main()
+{ 
+    int len;
+    char str1[50],str2[50];
+    char *x;
+    char *y;
+    x=str1;
+    y=str2;
+    printf("Enter the first string:");
+    scanf("%[^\n]s",str1);
+    printf("The entered string is:");
+    printf("%s\n",str1);
+    copy(str1,str2);
+    printf("The copied string is:%s\n",str2);
+    len=strlen(str2);
+    printf("The length of new string is:");
+    printf("%d",len);
+    return 0;
+}
+
+Output:
+Enter the first string:Good morning all
+The entered string is:Good morning all
+The copied string is:Good morning all
+The length of new string is:16
