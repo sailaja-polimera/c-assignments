@@ -1,0 +1,29 @@
+#include <stdio.h>          //header file
+void swap(int *x,int *y )    // function to swap  two numbers
+{
+    int t;         //declaration of temporary variable t of type int
+    t   = *x;      //storing the value at address x in t
+    *x   = *y;     //storing the value at address y to the value present in the address x
+    *y   =  t;     //storing the value t at address y
+}
+
+int main()     //program starts from here
+{
+    int a,b;   //declaration of a and b of type int
+
+    printf("Enter value of a: ");   //printing the value of a 
+    scanf("%d",&a);                 //reading the value of a
+    printf("Enter value of b: ");   //printing the value of b
+    scanf("%d",&b);                 //reading the value of b
+    printf("Before Swapping the numbers are %d %d\n",a,b);   //printing the numbers before swapping
+    swap(&a,&b);                    //calling the swap() function 
+    printf("After  Swapping the numbers are %d %d\n",a,b);  //printing the numbers after swapping
+
+    return 0;    //return type
+}
+
+Output:
+Enter value of a: 3
+Enter value of b: 5
+Before Swapping the numbers are 3 5
+After  Swapping the numbers are 5 3
