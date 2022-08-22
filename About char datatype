@@ -1,0 +1,76 @@
+1) why the character is 1 byte?
+
+   Explanation:
+   Just count all the values, so total will 26 capital alphabets we have in English and 26 small letters 
+   next 10 numbers and not more than 150 special symbols. So here if you add all these, then this is less than 256. 
+   Any language you can take in this world, it is at most having 256 symbols.
+   So, ASCII decided that if we assign the values for these symbols from 0 to 255, so you 
+   can represent any character in the language using one byte of memory.
+   256 is nothing but a 2 power 8 value. 2 power 8 is nothing but a one-byte memory.
+   This is the only reason every character we can represent using one byte of memory in a programming language.
+  
+  
+  
+ 2) What does CHAR (UNnsigned &  Signed) by default?
+
+  explanation:
+  By default, char behaves like an unsigned char .
+  The default value of Char is the character with a code point of 0.
+  \u0000'
+    
+ About character datatype:
+
+
+ 3)/*character data type --->  signed and unsigned   
+
+Char is the most basic data type in C. It stores a single character and requires a single byte of memory in almost all compilers.
+Unsigned char is a character datatype where the variable consumes all the 8 bits of the memory and there is no sign bit (which is there in signed char). 
+So it means that the range of unsigned char data type ranges from 0 to 255.
+Syntax: unsigned char [variable_name] = [value]
+The range for signed  char data type ranges from -128 to +127
+Syntax: unsigned char [variable_name] = [value]
+Either positive value or negative value always the counting starts with 0.Positive value counting starts from 0, 1, 2, and so on up to 127  in a clockwise direction.
+Negative values counting starts from -1, -2, -3, and so in up to -128 in an anti-clockwise direction .
+Note: In the declaration of variable if you are not specifying whether the variable is a signed variable or unsigned variable by default it is a signed variable and can accept both positive and negative values.
+let us explain with program
+#include <stdio.h>
+int main()
+{   unsigned char ch1 = 'c';//initialisation of unsigned char
+    unsigned char ch2 = 258;//initialisation of unsigned char(its a warning becoz it is out of range)
+    char ch3;//declaration of char data type(defaultly it takes signed )
+    char CH = 'A';//initialisation of signed char (defaultly it takes signed )
+    signed char ch4 = 126;//initialisation of signed char
+    signed char ch5 = 260;//initialisation of signed char
+    
+    
+    printf("%c\n", CH);//printing character
+    printf("%d\n", CH);// printing integer value of the character
+    printf("%c\n", ch1);//for signed printing character
+    printf("%d\n", ch1);//for signed printing value of character
+    printf("%c\n", ch2);// unknown garbage value may print becoz out of unsigned range
+    printf("%d\n", ch2);//it print '2'depends on number chat
+    printf("enter one character: ");//our console is to enter the character
+    scanf("%c",&ch3);// read the entered character
+    printf("ASCII value is %d\n",ch3);//display ASCII  value for character
+    printf("%c\n", ch4);//printing character for no. signed 126
+    printf("%d\n", ch4);// print the signed value
+    printf("%c\n", ch5);//unknown garbage value may print becoz out of unsigned range
+    printf("%d\n", ch5);// for 260 it will give 4 as interger value depends on number chat
+    return 0;
+}
+output:
+A
+65
+c
+99
+garbage value
+2
+enter one character: %
+ASCII value is 37
+~
+126
+garbage value
+4
+
+
+
