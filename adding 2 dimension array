@@ -1,0 +1,77 @@
+#include <stdio.h>//header file
+#define ROWS 2 //defining no. of rows
+#define COLS 2 // defining no. of columns
+/* Function declaration to input, add and print matrix */
+void matInput(int mat[][COLS]);
+void matPrint(int mat[][COLS]);
+void matAdd(int mat1[][COLS], int mat2[][COLS], int res[][COLS]);
+int main()//execution starts from here
+{
+    int mat1[ROWS][COLS], mat2[ROWS][COLS], res[ROWS][COLS];//declaration of matrices in int data type
+
+    // Input elements in first matrix
+    printf("Enter elements in first matrix of size %dx%d: \n", ROWS, COLS);
+    matInput(mat1);
+
+    // Input element in second matrix
+    printf("\nEnter elemetns in second matrix of size %dx%d: \n", ROWS, COLS);
+    matInput(mat2);
+
+    //  sum of both matrices and print result
+    matAdd(mat1, mat2, res);
+
+    printf("\nSum of first and second matrix: \n");
+    matPrint(res);
+    
+
+    return 0;//return type
+}
+void matInput(int mat[][COLS])//Function to read input from user and store in matrix.
+{
+    int i, j;
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            scanf("%d", (*(mat + i) + j));// (*(mat + i) + j) is equal to &mat[i][j]
+        }
+    }
+}
+void matPrint(int mat[][COLS])//Function to print elements of matrix on console.
+{
+    int i, j;
+
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            printf("%d ", *(*(mat + i) + j));// *(*(mat + i) + j) is equal to mat[i][j]
+        }
+        printf("\n");
+    }
+}
+
+void matAdd(int mat1[][COLS], int mat2[][COLS], int res[][COLS])//Function to add two matrices 
+{
+    int i, j;
+
+    for (i = 0; i < ROWS; i++)// Iterate over each matrix elements 
+    {
+        for (j = 0; j < COLS; j++)
+        {
+            *(*(res + i) + j) = *(*(mat1 + i) + j) + *(*(mat2 + i) + j);// res[i][j] = mat1[i][j] + mat2[i][j]
+        }
+    }
+}
+OUTPUT:
+Enter elements in first matrix of size 2x2: 
+3 4
+2 6
+
+Enter elemetns in second matrix of size 2x2: 
+2 5  
+4 3
+
+Sum of first and second matrix: 
+5 9 
+6 9 
