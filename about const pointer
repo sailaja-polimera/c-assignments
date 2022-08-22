@@ -1,0 +1,94 @@
+Constant Pointers 
+here address will remain constant.
+Syntax: <type of pointer> *const <name of the pointer>
+example:
+#include <stdio.h>  
+int main()  
+{  
+    int a=1;  
+    int b=2;  
+    int *const ptr;  
+    ptr=&a;  
+    ptr=&b;  
+    printf("Value of ptr is :%d",*ptr);  
+    return 0;  
+}  
+output: compilation failed
+main.c: In function ‘main’:
+main.c:15:8: error: assignment of read-only variable ‘ptr’
+   15 |     ptr=&a;
+      |        ^
+main.c:16:8: error: assignment of read-only variable ‘ptr’
+   16 |     ptr=&b;
+   
+//note:
+//In the above code, we are changing the value of 'ptr' from &a to &b, which is not possible with constant pointers.
+//Therefore, we can say that the constant pointer, which points to some variable, cannot point to another variable.
+
+//Pointer to Constant:
+// the value of the variable that the pointer points cannot be changed.  The address of these pointers can be changed.
+ Syntax: const <type of pointer>* <name of pointer> 
+ example:
+ #include <stdio.h>  
+int main()  
+{  
+    int a=100;  
+    int b=200;  
+    const int* ptr;  
+    ptr=&a;  
+    ptr=&b;  
+    printf("Value of ptr is :%u",ptr);  
+    return 0;  
+}  
+result:
+Value of ptr is :2684259164
+note:
+it shows the value of 'ptr' in the output.
+
+Now we are changing the value of the variable to which the pointer points.
+#include <stdio.h>  
+int main()  
+{  
+    int a=100;  
+    int b=200;  
+    const int* ptr;  
+    ptr=&b;  
+    *ptr=300;  
+    printf("Value of ptr is :%d",*ptr);  
+    return 0;  
+}  
+output: compilation failed
+main.c: In function ‘main’:
+main.c:16:9: error: assignment of read-only location ‘*ptr’
+   16 |     *ptr=300;
+      |         ^
+// note:
+ This error means that we cannot change the value of the variable to which the pointer is pointing.
+ 
+ //Constant Pointer to a Constant:
+ It can neither change the address of the variable to which it is pointing nor it can change the value placed at this address.
+ Syntax: const <type of pointer>* const <name of the pointer>;  
+ example:
+ #include <stdio.h>  
+int main()  
+{  
+    int a=10;  
+    int b=90;  
+    const int* const ptr=&a;  
+   *ptr=12;  
+    ptr=&b;  
+    printf("Value of ptr is :%d",*ptr);  
+    return 0;  
+}   
+result: compilation failed
+main.c: In function ‘main’:
+main.c:15:8: error: assignment of read-only location ‘*ptr’
+   15 |    *ptr=12;
+      |        ^
+main.c:16:8: error: assignment of read-only variable ‘ptr’
+   16 |     ptr=&b;
+      |        ^
+      
+//Note:
+Therefore, the constant pointer to a constant can change neither address nor value, which is pointing by this pointer.
+ 
