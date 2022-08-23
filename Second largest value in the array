@@ -1,0 +1,29 @@
+#include <stdio.h>  //headerfile consists of printf and scanf functions
+int main()          //program execution start from here
+{
+    int a[]={2,5,6,7,8,6};  //intializing array of elements of type int
+    int max=a[0];           //assign first value of array to max
+    int i;                  //declare a variable i 
+    for(i=0;i<6;i++)         //loop to iterate over array
+    {
+        if(a[i]>max)        //if array elements greater than max
+        {
+            max=a[i];       //assign  value with max
+        }
+    }
+    
+    printf("Largest element in the array is:%d\n",max); //printing largest element in the array
+    int sec_max=a[0];       //assign first index value to sec_max
+      for(i=0;i<6;i++)      //loop to iterate over array
+    {
+        if(a[i]>sec_max&&a[i]!=max)  //if array elements greater than sec_max and array element not equal to max value
+        {
+            sec_max=a[i];   //assign value to sec_max
+        }
+    }
+     printf("Second largest element in the array is:%d",sec_max);  //printing second largest element in the array
+
+}
+ Output:
+Largest element in the array is:8
+Second largest element in the array is:7
