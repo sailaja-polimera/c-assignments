@@ -1,14 +1,15 @@
-#include <stdio.h>
-int main()
+#include <stdio.h>  //header file contains printf and scanf functions
+#define SIZE_ARR 10  //Initialization  of macro 
+int main()   //program execution start from here
 {
-    char ch[10]={'s','a','i','l','u','e','p','k','r','o'};
-    for(int i=0;i<10;i++)
+    char ch[]={'s','a','i','l','u','e','p','k','r','o'};  //Initialization of character array 
+    for(int i=0;i<SIZE_ARR;i++)  //for loop to iterate over the char array
     {
-        if(ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u')
+        if(ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u')  //checking the conditions to be a vowel atleast one condition is true enters into the block 
         {
-            printf("%c\n",ch[i]);
-            printf("%d\n",i);
-            printf("%p\n",&ch[i]);
+            printf("%c\n",ch[i]);  //printing the value in the character array(vowel) using index
+            printf("%d\n",i);   //printing the position of vowel.
+            printf("%p\n",&ch[i]);  //printing the address of vowel
         }
     }
 }
