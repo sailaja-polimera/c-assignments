@@ -7,27 +7,27 @@ int main()   //program execution start from here
     {
         if(ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u')  //checking the conditions to be a vowel atleast one condition is true enters into the block 
         {
-            printf("%c\n",ch[i]);  //printing the value in the character array(vowel) using index
-            printf("%d\n",i);   //printing the position of vowel.
-            printf("%p\n",&ch[i]);  //printing the address of vowel
+            printf("Value of vowel is:%c\n",ch[i]);  //printing the value in the character array(vowel) using index
+            printf("Position of vowel is:%d\n",i);   //printing the position of vowel.
+            printf("Address of vowel is:%p\n",&ch[i]);  //printing the address of vowel
         }
     }
 }
 
 
 Output:
-a
-1
-0x7ffe649dcd3f
-i
-2
-0x7ffe649dcd40
-u
-4
-0x7ffe649dcd42
-e
-5
-0x7ffe649dcd43
-o
-9
-0x7ffe649dcd47
+Value of vowel is:a
+Position of vowel is:1
+Address of vowel is:0x7ffe649dcd3f
+Value of vowel is:i
+Position of vowel is:2
+Address of vowel is:0x7ffe649dcd40
+Value of vowel is:u
+Position of vowel is:4
+Address of vowel is:0x7ffe649dcd42
+Value of vowel is:e
+Position of vowel is:5
+Address of vowel is:0x7ffe649dcd43
+Value of vowel is:o
+Position of vowel is:9
+Address of vowel is:0x7ffe649dcd47
