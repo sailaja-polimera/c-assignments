@@ -1,9 +1,9 @@
-#include <stdio.h>
-#define size_arr 5//method 1
-int main()
+#include <stdio.h>  //header file consists of printf and scanf function
+#define size_arr 5//intializing macro
+int main()  //program start from here
 {
-    int i;
-    char ch[]={'a','b','c','d','e'};
+    int i;  //declaration of variable
+    char ch[]={'a','b','c','d','e'};  //intializing char array
     printf("Base address of char array is:%p\n",ch);
     ch[5]='f';
     ch[6]='g';
