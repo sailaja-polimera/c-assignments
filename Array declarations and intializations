@@ -1,0 +1,90 @@
+#include <stdio.h>
+#define size_arr 5//method 1
+int main()
+{
+    int i;
+    char ch[]={'a','b','c','d','e'};
+    printf("Base address of char array is:%p\n",ch);
+    ch[5]='f';
+    ch[6]='g';
+     for(i=0;i<7;i++)
+    {
+        printf("value at index %d is %c\n",i,ch[i]);
+    }
+     
+     
+    char s[5]={'s','a','i','l','u'};
+    for(i=0;i<5;i++)
+    {
+        printf("value at index %d is %c\n",i,s[i]);
+    }
+    
+    
+    int arr[]={1,2,3,4,5};
+    int no_ele=sizeof(arr)/sizeof(int);
+    printf("Number of elementsis:%d\n",no_ele);
+    
+    printf("address of first element:%p\nvalue at index 0:%d\nn",arr,arr[0]);
+    printf("address of second element:%p\nvalue at index 1:%d\n",arr+1,arr[1]);
+    printf("address of third element:%p\nvalue at index 2:%d\n",arr+2,arr[2]);
+    printf("address of fourth element:%p\nvalue at index 3:%d\n",arr+3,arr[3]);
+    printf("address of fifth element:%p\nvalue at index 4:%d\n",arr+4,arr[4]);
+    
+    for(i=0;i<no_ele;i++)
+    {
+        printf("address of arr[%d]is:%p\nvalue at index %d is:%d\n",i,arr+i,i,arr[i]);
+    }
+    
+    
+     int j=0;
+     while(j<5)
+     {
+         printf("value at index %d:%d\n",j,arr[j]);
+         j++;
+     }
+    
+    
+    return 0;
+}
+
+Output:
+
+Base address of char array is:0x7ffc15ab1cee
+value at index 0 is a
+value at index 1 is b
+value at index 2 is c
+value at index 3 is d
+value at index 4 is e
+value at index 5 is f
+value at index 6 is g
+value at index 0 is s
+value at index 1 is a
+value at index 2 is i
+value at index 3 is l
+value at index 4 is u
+Number of elementsis:5
+address of first element:0x7ffc15ab1cd0
+value at index 0:1
+naddress of second element:0x7ffc15ab1cd4
+value at index 1:2
+address of third element:0x7ffc15ab1cd8
+value at index 2:3
+address of fourth element:0x7ffc15ab1cdc
+value at index 3:4
+address of fifth element:0x7ffc15ab1ce0
+value at index 4:5
+address of arr[0]is:0x7ffc15ab1cd0
+value at index 0 is:1
+address of arr[1]is:0x7ffc15ab1cd4
+value at index 1 is:2
+address of arr[2]is:0x7ffc15ab1cd8
+value at index 2 is:3
+address of arr[3]is:0x7ffc15ab1cdc
+value at index 3 is:4
+address of arr[4]is:0x7ffc15ab1ce0
+value at index 4 is:5
+value at index 0:1
+value at index 1:2
+value at index 2:3
+value at index 3:4
+value at index 4:5
