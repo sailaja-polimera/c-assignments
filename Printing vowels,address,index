@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+    char ch[10]={'s','a','i','l','u','e','p','k','r','o'};
+    for(int i=0;i<10;i++)
+    {
+        if(ch[i]=='a'||ch[i]=='e'||ch[i]=='i'||ch[i]=='o'||ch[i]=='u')
+        {
+            printf("%c\n",ch[i]);
+            printf("%d\n",i);
+            printf("%p\n",&ch[i]);
+        }
+    }
+}
+
+
+Output:
+a
+1
+0x7ffe649dcd3f
+i
+2
+0x7ffe649dcd40
+u
+4
+0x7ffe649dcd42
+e
+5
+0x7ffe649dcd43
+o
+9
+0x7ffe649dcd47
