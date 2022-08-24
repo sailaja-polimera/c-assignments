@@ -1,0 +1,21 @@
+#include <stdio.h> //header file consists of printf and scanf functions
+# define LEN_ARR 5 //intializing macros with length
+int main()    //program execution start from here
+{
+   char arr[]={'s','a','i','l','u'};  //intializing character array
+   char temp;  //declaring variable of type char 
+   char *ptr=&temp;  //pointer pointing to temp variable
+   printf("Enter a character to be search:"); //printing message
+   scanf("%c",&temp);  //taking temp from user
+   for(int i=0;i<LEN_ARR;i++) //for loop to iterate over array
+     {
+       if(arr[i]==*ptr)  // given array element is equal to the  pointer value
+       {
+       printf("Value found at index:%d",i);//printing the position of array of the searched element
+       }
+}
+    return 0; //return type
+}
+Output:
+Enter a character to be search:a
+Value found at index:1 
