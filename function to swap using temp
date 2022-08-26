@@ -1,0 +1,25 @@
+/*swap with temp using functions */ 
+
+
+#include <stdio.h>//header file
+void swap(int a,int b)//declaration & defnition  of function
+{
+    int temp = a;   //a is assigned to temp
+    a = b;     //b is assigned to a
+    b = temp;   //temp is assigned to b - logic for swapping
+    printf("\nAfter swaping x=%d,y=%d",a,b);  //after swapping the values are print
+}
+int main()    //execution starts from here
+{
+    int x,y;   //declaration of x and y in int data type
+    printf("Enter the x and y values:");  //print statement
+    
+        scanf("%d %d",&x,&y);   //to read the values
+        printf("Before swapping  x=%d,y=%d ",x,y);  //before swapping print statement
+        swap(x,y);  //calling function   
+        return 0;  //return statement
+}
+Output:
+Enter the x and y values:20 50
+Before swapping  x=20,y=50 
+After swaping x=50,y=20
