@@ -1,0 +1,41 @@
+/*write program with fns, passing array as parameter and reverse the array- write one more fun to print thr reversed array*/
+
+#include <stdio.h>//header file includes printf and scanf function
+void reverse(int arr[],int size)//declaration of function by passing array and size as parameters
+{
+int i;  //declaration of i
+for(i=0;i<size/2;i++)  //loop to iterate over array(2 times)
+{
+    int temp=arr[i];    //storing array value at temp
+    arr[i]=arr[size-(i+1)];   //storing size(i+1) position value in i postion value
+    arr[size-(i+1)]=temp;     //storing temp value in size(i+1) position value
+    
+}
+}
+void print(int arr[], int size)//declaration and definition of function to print reverse elements
+{
+    int i;  //declaration of i
+ printf("\nAfter reversing the elements are:");  //print message
+    for(i=0;i<size;i++)  //loop to iterate over the array
+   
+    printf("%d ",arr[i]);  //printing elements in  reverse order
+
+} 
+int main()   //execution starts from here
+{   int i;  //declaration of i
+    int arr[5]={10,20,30,40,50};  //initialisation of array
+    int size=sizeof(arr)/sizeof(int);  //to calculate the size of array
+     printf("Before reversing the elements are:");//print message
+    for(i=0;i<size;i++)  //loop to iterate over the array
+   
+    printf("%d ",arr[i]);  //printing array elements before reversing
+    
+    reverse(arr,size);  //calling function to reverse the elements
+    print(arr,size);    //calling function to print the reverse elements
+
+    return 0;//return type
+}
+output:
+Before reversing the elements are:10 20 30 40 50  
+After reversing the elements are:50 40 30 20 10
+
