@@ -1,0 +1,42 @@
+/*program to check the frequency of an elements within the array without using functions */
+
+#include <stdio.h>  //header file consists of printf and scanf function
+int main()   //execution starts from here
+{
+int i,j;   //declaration of 2 integer variables
+int a[] = {3, 2, 4, 2, 2,1};  //initialisation of integer array 
+int b[] ={0,0,0,0,0,0};  //initialisation of integer array to zeros to avoid  from garbage values
+for(i=0;i<6;i++)   //loop to iterate over  the array
+{
+    int count=1;   //initialisation of count to 1 becoz every element occurs atleast once
+    for(j=i+1;j<6;j++)  //loop to start from 2nd element of array for comparing
+    {
+        if(a[i]==a[j])   //condition to check whether elements are equal or not
+        {
+        count++; //if elements are equal count increases
+        b[j]=-100; //making array value as negative so that we cant access the element
+    }
+    
+}
+  if(b[i]!=-100)  //condition to check if the second array element is not equal to -100 
+  
+  b[i]=count;    //assign count to index of second array 
+}
+    for(i=0;i<6;i++)   //loop to iterate over the array
+    
+    {
+         if(b[i]!=-100)  //condition to check the second array may contain negative value or not
+        
+        printf("Frequency  of %d index element %d is:%d\n",i,a[i],b[i]);   //print statement to get the frequency of elements of index i and element 
+        
+    }
+    return 0;   //return type
+    }
+output:
+Frequency  of 0 index element 3 is:1
+Frequency  of 1 index element 2 is:3
+Frequency  of 2 index element 4 is:1
+Frequency  of 5 index element 1 is:1
+
+
+
