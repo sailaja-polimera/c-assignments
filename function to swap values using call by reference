@@ -1,0 +1,29 @@
+/*program to pass by reference for swap*/
+#include <stdio.h>      //header file consist of printf and scanf functions
+int swap(int *a,int *b)  //declaration & defnition  of function
+{
+    //logic for swapping with temp but by using reference to pass 
+    int temp = *a;  //storing value  present in the pointer a in temp
+    *a = *b;        //storing value present in the pointer b in pointer of value a
+   *b = temp;       //storing temp in pointer of value b
+    printf("\nAfter swaping the values are x=%d,y=%d",*a,*b); //printing elements after swapping 
+    return 0;  //return type
+}
+int main()
+{
+    int x,y;   //declaration of x and y of int data type
+    printf("Enter the x and y values:");  //print messsage
+    
+        scanf("%d %d",&x,&y);  //scanning elements from users
+        printf("Before swapping the values are x=%d,y=%d ",x,y);  //printing values before swapping
+        swap(&x,&y);   //calling function 
+        printf("\nAfter swaping the values are x=%d,y=%d",x,y);   //printing values after swapping in calling function-since it is a call by reference 
+    return 0;///rreturn type
+}
+output:
+Enter the x and y values:12 87
+Before swapping the values are x=12,y=87 
+After swaping the values are x=87,y=12
+After swaping the values are x=87,y=12
+
+
