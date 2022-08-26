@@ -1,0 +1,25 @@
+/*program to swap without using temp variables using functions*/
+
+#include <stdio.h>      //header file
+void swap(int a,int b)   //declaration & defnition  of function
+{
+{
+    a=a+b;   //logic for swapping without temp
+    b=a-b;
+    a=a-b;
+    printf("\nAfter swaping x=%d,y=%d",a,b);   //print statement
+}
+int main()
+{
+    int x,y;   //declaration of x and y OF int data type
+    printf("Enter the x and y values:");    //print statement
+    scanf("%d %d",&x,&y);   //to read the values
+    printf("Before swapping  x=%d,y=%d ",x,y);   //to print the values before swapping
+    swap(x,y);  //calling function     
+    return 0;   //return type
+}
+output:
+Enter the x and y values:40 30
+Before swapping  x=40,y=30 
+After swaping x=30,y=40
+
