@@ -1,0 +1,37 @@
+#include<stdio.h>
+void sailu_strcat(char [],char []);//fun declaration
+#define len 50//defining macro as len 
+int main()
+{
+    char s1[len],s2[len];//declaring 2 characters string s1 and s2
+    printf("enter string s1:");
+    scanf("%s",s1);
+    printf("enter string s2:");
+    scanf("%s",s2);
+    sailu_strcat(s1,s2);//calling a function
+}
+void sailu_strcat(char p[],char r[])
+{
+    int i=0,j=0,k=0;//declaring and initialing i,j,k values as zero
+    char s3[len];//declaring character string as s3
+    while(p[i]!='\0')
+    {
+        s3[k]=p[i];//assigning p values to s3
+        i++;//incrementing i value
+        k++;//incrementing k value
+    }
+    while(r[j]!='\0')
+    {
+        s3[k]=r[j];//assigning r values to s3
+        j++;//incrementing j value
+        k++;//incrementing k value
+    }
+    s3[k]='\0';//assigning s3 last value as null
+    printf("concatenation string is %s",s3);
+}
+
+output:
+
+enter string s1:sailu
+enter string s2:polimera
+concatenation string is sailupolimera
