@@ -1,0 +1,26 @@
+/* string copy */
+#include <stdio.h>   //headerfile consists of printf and scanf functions
+void sailaja_strcopy(char s1[100],char s2[100])    //called function
+{
+   int i;     declaration of i
+  for(i=0;s1[i]!='\0';i++)   //for loop to iterate over the string
+  {
+        s2[i] = s1[i];      //copying from string 1 to string 2
+    }
+        s2[i]='\0';         //asssigning remaining values to null
+        printf("\nCopied string s2: %s", s2);  //printing the copied string
+}
+void main()
+{
+  char s1[100],s2[100];   //declaration of 
+  printf("Enter the string:");  //printing message 
+  scanf("%[^\n]s",s1);          //reading from user 
+  printf("Entered string is:");  //printing message
+  printf("%s",s1);               //printing s1 string
+  sailaja_strcopy(s1,s2);        //calling function
+}
+
+Output:
+Enter the string:polimera sailaja
+Entered string is:polimera sailaja
+Copied string s2: polimera sailaja
