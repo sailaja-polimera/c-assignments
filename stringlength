@@ -1,0 +1,20 @@
+#include <stdio.h>   //headerfile consists of printf and scanf functions
+void sailaja_strlen(char s1[])      //called function
+{
+ int i=0,c=0;         //intialization of i and c
+ while(s1[i]!='\0')   //loop that iterates upto end of string that is null
+       {
+        c++;          //increment count 
+        i++;          //increment i
+       }
+       printf("\nlength of string %s is :%d",s1,c);   //printing length of string
+}
+void main()
+{
+  char s1[100];       //declaration of character array
+  printf("Enter the string:");   //printing message 
+  scanf("%[^\n]s",s1);           //reading string from user
+  printf("Entered string is:");  //printing message
+  printf("%s",s1);               //printing the enetered string
+  sailaja_strlen(s1);            //calling function
+}
