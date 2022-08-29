@@ -1,0 +1,40 @@
+#include<stdio.h>
+#define len 50
+int main()
+{
+    char s1[len],search;//declaring character search and s1
+    int i,c=0;//declaring i and initializing c 
+    printf("enter a string:");
+    gets(s1);//takes input from the user
+    printf("enter charcter to be search:");
+    scanf("%c",&search);
+    for(i=0;i<len;i++)
+    {
+        if(s1[i]!='\0')
+        {
+            if(s1[i]==search)
+            {
+                c=c+1;
+                break;
+            }
+        }
+    }
+    if(c==1)
+        printf("first occurence of a given character %c in a given string %s is %d",search,s1,i);
+    else
+        printf("element not found");
+}
+
+output:
+
+**case 1:
+
+enter a string:sailu
+enter charcter to be search:j
+element not found
+
+**case 2:
+
+enter a string:sailu
+enter charcter to be search:a
+first occurence of a given character a in a given string sailu is 1
