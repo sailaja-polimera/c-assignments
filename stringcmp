@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define len 50
+int sailu_strcmp(char [],char []);//fun declaration with return value
+int main()
+{
+    char s1[len],s2[len];//declaring two strings
+    int cmp;//declaring  cmp variable
+    printf("enter a string:");
+    scanf("%s",s1);
+    printf("enter a string:");
+    scanf("%s",s2);
+    cmp=sailu_strcmp(s1,s2);//cmp stores the value return from the function
+    if(cmp==0)
+    {
+        printf("given strings are same");
+    }
+    else
+    {
+        printf("given strings are not same");
+    }
+}
+int sailu_strcmp(char p[],char r[])
+{
+    int i=0,c=0;//declaring and initializing c and i value as zero
+    while(p[i]!='\0' && r[i]!='\0')//while loop to check the characters of the string
+    {
+        if(p[i]!=r[i])
+        {
+            c=1;//c as assigned with value 1
+            break;
+        }
+        i++;
+    }
+    if(c==0)
+        return 0;
+    else
+        return 1;
+}
+
+output:
+
+***case1:
+enter a string:sailu
+enter a string:sailu
+given strings are same
+
+*****case 2:
+enter a string:sailaja
+enter a string:hema
+given strings are not same
