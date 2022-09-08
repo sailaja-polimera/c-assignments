@@ -1,0 +1,77 @@
+
+
+static:
+#include <stdio.h> 
+void fun()  
+{
+   static int a=10;
+   printf("before calling:%d\n",a);
+   ++a;
+   printf("after calling:%d\n",a);
+}
+int main()
+{
+    fun();
+    fun();
+    fun();
+}
+
+output:
+before calling:10
+after calling:11
+before calling:11
+after calling:12
+before calling:12
+after calling:13 
+
+auto:
+#include <stdio.h> 
+void fun()  
+{
+   int a=10,b=20;
+   {
+       int a=15,c=18;
+       printf("%d %d %d",a,b,c);
+       {
+           int b=25,d=30;
+           printf("%d %d %d %d",a,b,c,d);
+       }
+       printf("%d %d %d %d",a,b,c,d);
+       }
+   }
+   printf("%d %d %d %d",a,b,c,d);
+       }
+  
+output:
+error: ‘d’ undeclared (first use in this function)
+   12 |        printf("%d %d %d %d",a,b,c,d);
+error: expected declaration specifiers or ‘...’ before string constant
+   15 |    printf("%d %d %d %d",a,b,c,d);
+error: unknown type name ‘a’
+   15 |    printf("%d %d %d %d",a,b,c,d);
+error: unknown type name ‘b’
+   15 |    printf("%d %d %d %d",a,b,c,d);
+
+extern:
+file1.c
+#include <stdio.h> 
+ extern int a;
+int main()
+{
+    printf("%d",a);
+    return 0;
+}
+ file2.c
+int a=57;
+output:
+57
+
+register:
+#include <stdio.h>
+int main()
+{
+   register int a=10;
+   printf("%d",a);
+}
+output:10
+
