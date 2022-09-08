@@ -1,0 +1,24 @@
+#include <stdio.h> //headerfile consists of printf and scanf function
+int main()  //program execution starts from here
+{
+    int num,n,t;  //declaration of num,n and t
+    printf("Enter any number: "); //printing message
+    scanf("%d", &num);  //taking values from user
+    printf("Enter nth bit to toggle: ");//Input bit position you want to toggle
+    scanf("%d", &n);  //taking n from user
+    t = num^(1 << n);   //Left shifts 1, n times means x<<y=x*(2 power y) and performing bitwise XOR with num  
+    printf("Number before toggling %d bit is: %d \n", n,num);  //printing the num and n value before toggling
+    printf("Number after toggling %d bit is: %d \n", n,t);  //printing the num and n value after toggling
+    return 0;  //return value
+}
+
+output:
+Enter any number: 22
+Enter nth bit to toggle: 2
+Number before toggling 2 bit is: 22 
+Number after toggling 2 bit is: 18 
+output:
+Enter any number: 16
+Enter nth bit to toggle: 2
+Number before toggling 2 bit is: 16 
+Number after toggling 2 bit is: 20 
