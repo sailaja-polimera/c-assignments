@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+void myMemCpy(void *dest, void *src, size_t n)
+{
+// Typecast src and dest addresses to (char *)
+char *csrc = (char *)src;
+char *cdest = (char *)dest;
+ int i;
+// Copy contents of src[] to dest[]
+for ( i=0;csrc[i]!='\0'; i++)
+
+    cdest[i] = csrc[i];
+  
+ cdest[i] = '\0';
+  printf("%s ", cdest);
+}
+// Driver program
+int main()
+{
+char csrc[] = "GeeksforGeeks";
+char cdest[100];
+myMemCpy(cdest, csrc, strlen(csrc)+1);
+//printf("Copied string is %s", cdest);
+
+    
+return 0;
+}
