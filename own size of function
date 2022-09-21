@@ -1,0 +1,8 @@
+#include <stdio.h>
+#define my_sizeof(type) (char *)(&type+1)-(char*)(&type)
+int main()
+{
+    int x[30];
+    printf("%ld", my_sizeof(x));
+    return 0;
+}
