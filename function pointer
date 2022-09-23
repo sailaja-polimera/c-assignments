@@ -1,0 +1,36 @@
+ #include <stdio.h>
+double size_x(double a)
+{
+  int result=(char*)(&a+1)-(char*)(&a);
+   return result;
+}
+int main()
+{
+    int s=0;
+    double (*fptr)(double);
+    fptr=size_x;
+    s=(*fptr)(52444545);
+    printf("%d",s);
+
+    return 0;
+}
+[05:22, 9/23/2022] Sailu: #include <stdio.h>
+int sum(int arr[],int a)
+
+{
+    int sum=0;
+  for(int i=0;i<a;i++)
+      sum=sum+arr[i];
+     return sum; 
+  }
+
+int main()
+{ int arr[]={1,2,3};
+    int s=0;
+    int (*fptr)(int[],int);
+    fptr=sum;
+    s=(*fptr)(arr,3);
+    printf("%d",s);
+
+    return 0;
+}
