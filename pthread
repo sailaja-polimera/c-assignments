@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include<pthread.h>
+void *fun()
+{
+    int a;
+    printf("%d ",a);
+}
+int main()
+{
+    printf("Hello World ");
+    pthread_t thread;
+    printf("Hello World ");
+    pthread_create(&thread,NULL,fun,NULL);
+    printf("Hello World ");
+    pthread_join(thread,NULL);
+    printf(" Hello World ");
+    return 0;
+}
