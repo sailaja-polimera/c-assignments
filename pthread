@@ -16,3 +16,33 @@ int main()
     printf(" Hello World ");
     return 0;
 }
+
+
+
+#include<pthread.h>
+#include <stdio.h>
+#include <sys/syscall.h>
+#include <unistd.h>
+void *fun()
+{
+    int a=10;
+    printf("%d ",a);
+}
+int main()
+{
+    pthread_t t_id;
+    printf("pid=%d ",getpid());
+    int res;
+  
+   res= pthread_create(&t_id,NULL,fun,NULL);
+     if(res==0)
+     {
+         printf("thread created ");
+     }
+     else 
+      printf("not thread created ");
+   pthread_join(t_id,NULL);
+    printf("Hello World");
+
+    return 0;
+}
