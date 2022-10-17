@@ -1,0 +1,48 @@
+linked list:
+
+A linked list is a linear data structure where each element is a separate object.
+Each element (we will call it a node) of a list is comprising of two items - the data and a reference to the next node. The last node has a reference to null. The entry point into a linked list is called the head of the list. It should be noted that head is not a separate node, but the reference to the first node. If the list is empty then the head is a null reference.
+A linked list is a dynamic data structure. The number of nodes in a list is not fixed and can grow and shrink on demand. Any application which has to deal with an unknown number of objects will need to use a linked list.
+
+One disadvantage of a linked list against an array is that it does not allow direct access to the individual elements. If you want to access a particular item then you have to start at the head and follow the references until you get to that item.
+
+Another disadvantage is that a linked list uses more memory compare with an array - we extra 4 bytes (on 32-bit CPU) to store a reference to the next node.
+
+program:
+#include <stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *link;
+    
+};
+int main()
+{
+     struct node* head=malloc(sizeof(struct node));
+     head->data=45;
+     head->link=NULL;
+     
+     struct node* current=malloc(sizeof(struct node));
+     current->data=55;
+     current->link=NULL;
+     head->link=current;
+     
+     current=malloc(sizeof(struct node));
+     current->data=65;
+     current->link=NULL;
+     
+      head->link->link=current;
+     
+     printf("%d ",head->data);
+     printf("%p ",head->link);
+      
+     printf("%d ",head->link->data);
+     printf("%p ",head->link->link);
+     
+     
+     printf("%d ",head->link->link->data);
+     printf("%p ",head->link->link->link);
+     
+    return 0;
+}
