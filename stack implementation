@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include<stdlib.h>
+#define C 5
+int stack[C];
+int top=-1;
+
+int isfull()
+{
+    if(top==C-1)
+        return 1;
+    else
+    return 0;
+}
+
+int push(int a)
+{
+    if(isfull())
+        printf("pushing is not possible");
+    else
+    {
+        top++;
+        stack[top]=a;
+        printf("%d",a);
+    }
+}
+
+int isempty()
+{
+    if(top==-1)
+        return 1;
+    else
+    return 0;
+}
+
+int pop()
+{
+    
+    if(isempty())
+        printf("stack is empty");
+    else
+    {
+       stack[top--];
+       printf("elements of the stack are:%d ",stack[top]);
+    }
+}
+
+int peek()
+{
+    
+    if(isempty())
+        printf("stack is empty");
+    else
+        printf("elements of the stack are:%d ",stack[top]);
+}
+int trave()
+{
+    if(isempty())
+        printf("stack is empty");
+    else
+    {
+      printf("elements of the stack are:");
+      for(int i=0;i<=top;i++)
+      printf("%d ",stack[i]);
+    }
+}
+int main()
+{
+    while(1)
+    {
+    printf("\n1.push\n");
+     printf("2.pop\n");
+     printf("3.peek\n");
+     printf("4.travese\n");
+     printf("5.exit\n");
+    int ch,item;
+    printf("enter your choice:");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:printf("eneter the element:");
+               scanf("%d",&item);
+               push(item);
+               break;
+        case 2:pop();
+               break;
+        case 3:peek();
+               break;
+        case 4:trave();
+               break;
+        case 5:
+               return 0;
+    }
+    }
+}
