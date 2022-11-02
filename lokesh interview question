@@ -1,0 +1,86 @@
+#include <stdio.h>
+enum{even,odd};
+int sub(int arr[2])
+{
+    int s=arr[0]-arr[1];
+    return s;
+}
+int add(int arr[2])
+{
+    int a=arr[0]+arr[1];
+    return a;
+}
+int check1(int s)
+{
+    
+    if(s%2==0)
+    return even;
+    else
+    return odd;
+    
+}
+int check(int a)
+{
+    
+    if(a%2==0)
+    return even;
+    else
+    return odd;
+    
+}
+
+
+int display(int r1)
+{
+
+    if(r1==0)
+    
+        printf("result of sub is even ");
+    else 
+        printf("result of sub is odd");
+    
+     
+}
+int display1(int r2)
+{
+    if(r2==0)
+    {
+        printf("result of add is even ");
+    }
+    else 
+     printf("result of add is odd ");
+     
+}
+int main()
+{
+    int arr[2],s,a;
+    printf("enter the array elements");
+    scanf("%d %d",&arr[0],&arr[1]);
+    int choice;
+    printf("enter the choice");
+    scanf("%d",&choice);
+    
+    switch(choice)
+    {
+        case 1:
+         s=sub(arr);
+        break;
+         case 2:
+          a=add(arr);
+        break;
+        
+    }
+    
+    if(choice==1)
+    {
+   int  r1=check1(s);
+
+   display(r1);
+    }
+    else if(choice==2)
+    {
+     int  r2= check(a);
+   display1(r2);
+    }
+    return 0;
+}
