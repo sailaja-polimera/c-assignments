@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+
+{
+    int r,sum=0,n=2562;
+    int temp=n;
+    while(n)
+    {
+        r=n%10;
+        sum=(sum*10)+r;
+    n=n/10;
+
+    }
+      n= temp;
+      (sum==n)? printf("palindrome"):printf("not a palindrome");
+}
