@@ -1,0 +1,73 @@
+use enum , macros / const keyword for conversion constants :
+
+use switch case 
+
+ONE fahrenheit --> celsius 
+TWO celsius to fahrenheit
+
+THREE days to weeks ---> no negative numbers - consider proper datatype 
+FOUR weeks to days
+
+FIVE : take radius input and cal area of circle 
+
+default : "this is invalid..tryonly from 1 to 5 "
+
+
+#include <stdio.h>
+#define K 32
+#define D 7
+#define PI 3.14
+enum days{sun=1,mon,tue,wed,thurs,fri,sat};
+enum cas{ONE=1,TWO,THREE,FOUR,FIVE,SIX};
+int main()
+{
+int choice;
+printf("enter the choice:");
+scanf("%d",&choice);
+ float fa,cels,area;
+ int no_days,no_weeks,w,n,r,days;
+switch(choice)
+{
+    case ONE:
+
+    printf("enter the fahr");
+    scanf("%f",&fa);
+    float cel=(((fa-K))/1.8);
+    printf("Temperature in Celsius is:%f",cel);
+    break;
+    case TWO: 
+
+    printf("enter the cel:");
+    scanf("%f",&cels);
+    float fahr=((cels*9/5)+K);
+    printf("temperatue in fahr is:%f",fahr);
+    break;
+
+    case THREE:
+    printf("enter the no of days ");
+    scanf("%d",&n);
+    no_weeks=n/D;
+    days=n%D;
+    printf("%d weeks %d days ",no_weeks,days);
+    break;
+
+
+     case FOUR:
+     printf("enter no of weeks=");
+    scanf("%d",&w);
+    no_days=w*D;
+    printf("no of days =%d",no_days);
+    break;
+
+    case FIVE:
+    printf("enter the radius:");
+    scanf("%d",&r);
+    area=PI*r*r;
+     printf("Area of circle is=%f",area);
+     break;
+
+    default:
+        printf("this is invalid.try only from 1 t0 5");
+        break;
+}
+}
