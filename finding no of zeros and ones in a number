@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+    int n,c1=0,c2=0;
+    printf("enter the n value:");
+    scanf("%d",&n);
+    while(n>0)
+    {
+        if(n%2==0)
+        {
+          
+            n=n/2;
+              c1++;
+            
+        }
+        else if(n%2!=0)
+        {
+           
+            n=n/2;
+             c2++;
+        }
+    }
+    printf("Number of 0's=%d\n",c1);
+     printf("Number of 1's=%d",c2);
+}
