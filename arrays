@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[50],n;//declaration
+   /* scanf("%d",&arr[0]);
+    scanf("%d",&arr[1]);
+    scanf("%d",&arr[2]);
+    scanf("%d",&arr[3]);
+    scanf("%d",&arr[4]);
+    printf("%d ",arr[0]);
+     printf("%d ",arr[1]);
+     printf("%d ",arr[2]);
+     printf("%d ",arr[3]);
+     printf("%d\n",arr[4]);
+     printf("address at 0th index is %p ",&arr[0]);
+     printf("%p ",&arr[1]);
+     printf("%p ",&arr[2]);
+     printf("%p ",&arr[3]);
+     printf("%p ",&arr[4]); without for loops*/
+   printf("enter the number of ele in n array:");
+  scanf("%d",&n);
+ for(int i=0;i<n;i++)
+      scanf("%d",&arr[i]);
+     for(int i=0;i<5;i++)
+    {
+      printf("array element at index %d is %d\n",i,arr[i]);
+         printf("array adress at index %d is %p\n",i,&arr[i]);
+     } 
+     printf("%p",&arr);
+    return 0;
+}
