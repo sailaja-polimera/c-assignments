@@ -1,0 +1,25 @@
+#include<stdio.h> 
+
+int main()
+{
+    int arr[]={10,20,30,40,50};
+   int i,x=15,pos=2,size=5;
+    printf("\n the elements you entered are \n");
+    for(i=0;i<size;i++)
+    {
+   printf(" %d ",arr[i]);
+    }
+    
+   
+    size=size+1;
+    
+    for(i=size-1;i>=pos;i--)
+    arr[i]=arr[i-1];
+    arr[pos-1]=x;
+    
+    for(i=0;i<size;i++)
+    {
+        printf(" %d ",arr[i]);
+    }
+    
+}
