@@ -1,0 +1,59 @@
+#include<stdio.h>
+int matrixmul(int m[5][5],int r,int c)
+{
+    int e[5][5]={0},d[3][3]={1,3,4,5,5,6,2,9,7};
+      for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+              for(int k=0;k<c;k++)
+              {
+            e[i][j]=e[i][j]+m[i][k]*d[k][j];
+    }
+}
+}
+printf("matrix multiplication is:");
+  printf("\n");
+ for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+             
+           printf("%d ",e[i][j]);
+    }
+     printf("\n");
+}
+}
+int main()
+{
+    int m[5][5],r=3,c=3;
+    printf("Enter the matrix elememts:");
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%d",&m[i][j]);
+    }
+}
+  printf("The matrix elememts are:");
+   printf("\n");
+for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            printf("%d ",m[i][j]);
+    }
+    printf("\n");
+}
+printf("Transpose of a matrix is:");
+printf("\n");
+for(int i=0;i<c;i++)
+    {
+        for(int j=0;j<r;j++)
+        {
+            printf("%d ",m[j][i]);
+    }
+    printf("\n");
+}
+matrixmul(m,r,c);
+}
