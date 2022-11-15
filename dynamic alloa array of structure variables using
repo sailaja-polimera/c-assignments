@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct course 
+{
+  int marks;
+  char subject[30];
+};
+
+int main() {
+  struct course *ptr;
+  int n;
+  printf("Enter the number of records: ");
+  scanf("%d", &n);
+
+  // Memory allocation for noOfRecords structures
+  ptr = (struct course*)malloc(n * sizeof(struct course));
+  for (int i = 0; i < n; ++i) {
+    printf("Enter subject and marks:\n");
+    scanf("%s %d", (ptr + i)->subject, &(ptr + i)->marks);
+  }
+
+  printf("Displaying Information:\n");
+  for (int i = 0; i < n; ++i) {
+    printf("%s\t%d\n", (ptr + i)->subject, (ptr + i)->marks);
+  }
+
+ // free(ptr);
+
+  return 0;
+}
+  
