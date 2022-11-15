@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+ int a[20],sum=0,n;
+  printf("enter the no of elements and elements in a matrix: ");
+
+ scanf("%d",&n);
+ for(int i=0;i<n;i++)
+ {
+ scanf("%d",&a[i]);
+}
+for(int i=0;i<n;i++)
+ {
+     for(int j=0;j<n;j++)
+     {
+         if(sum>a[i]-a[j])
+         {
+             sum=a[i]-a[j];
+         }
+     }
+ }
+     printf("the maximum difference is:%d ",abs(sum));
+  return 0;
+}
+  
