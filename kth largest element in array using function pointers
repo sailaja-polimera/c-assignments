@@ -1,0 +1,71 @@
+#include<stdio.h>
+int kth_largest(int arr[],int size,int k);
+int kth_smallest(int arr[],int size,int k);
+int main()
+{
+    int arr[]={6,3,9,8,1,2,10};
+    int size=sizeof(arr)/sizeof(int);
+    int k;
+    printf("enter the value of k:");
+    scanf("%d",&k);
+   int (*ptr)(int, int, int);
+   int (*p)(int,int,int );
+  ptr= kth_largest(arr,size,k);
+    p=kth_smallest(arr,size,k);
+    printf("\nkth largest element is %d",ptr);
+     printf("\nkth largest element is %d",p);
+}
+int kth_largest(int arr[],int size,int k)
+{
+    int i,j,temp;
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+             if(arr[i]>arr[j])
+             {
+                temp=arr[i] ;
+                arr[i]=arr[j];
+                arr[j]=temp;
+             }
+        }
+     
+       
+    }
+   
+    printf("after sorting the array elements:");
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    
+    //printf("\nkth largest element is %d",arr[k-1]);
+    return arr[k-1];
+}
+int kth_smallest(int arr[],int size,int k)
+{
+    int i,j,temp;
+    for(i=0;i<size;i++)
+    {
+        for(j=0;j<size;j++)
+        {
+             if(arr[i]<arr[j])
+             {
+                temp=arr[i] ;
+                arr[i]=arr[j];
+                arr[j]=temp;
+             }
+        }
+     
+       
+    }
+   
+    printf("\nafter sorting the array elements:");
+    for(int i=0;i<size;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    
+   // printf("\nkth smallest element is %d",arr[k-1]);
+   return arr[k-1];
+}
