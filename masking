@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+    int n=7;
+   int pos1=5,pos2=2;
+   int a=(1<<pos1-1)-1;
+  // printf("%d ",a);
+   int b=(n>>pos2-1);
+   // printf("%d ",b);
+   int c=a&b;
+   printf("%d",c);
+    return 0;
+}
