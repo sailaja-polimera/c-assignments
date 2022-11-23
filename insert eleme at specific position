@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int arr[20],n,item,pos,i;
+    printf("enter the size of array:");
+    scanf("%d",&n);
+    printf("enter the new element and posi:");
+      scanf("%d %d",&item,&pos);
+       for(int i=0;i<n;i++)
+       scanf("%d",&arr[i]);
+      n++;
+      pos--;
+    for(int i=n;i>pos;i--)
+    {
+        arr[i-1]=arr[i-2];
+        
+    }
+   arr[pos]=item;
+   for(int i=0;i<n;i++)
+ {
+     printf("%d ",arr[i]);
+ }
+    return 0;
+}
