@@ -1,0 +1,10 @@
+#include <stdio.h>
+#define  GREATER(x,y) if(x>y) \
+                      printf("x is greater than y"); \
+                      else \
+                      printf("x is less thsn y"); 
+int main()
+{
+   GREATER(6,5);
+    return 0;
+}
