@@ -12,5 +12,9 @@ int main()
 
 constant keyword:
 If it is intialied we cannot change the value .
+Constant should always intialized. 
 We can change the value through pointe after typecasting it.
+If it is declared as global it is stored in data sgment of intialized part.
+If it is declared as local it is stored in RAM.
+
 
