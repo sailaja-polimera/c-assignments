@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+   int n=12,n1=12,sum=0;
+   while(n)
+   {
+       sum=sum+n1;
+       n--;
+   }
+   printf("%d",sum);
+    return 0;
+}
