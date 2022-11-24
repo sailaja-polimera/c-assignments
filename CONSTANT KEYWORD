@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+    const int a=10;
+    int *ptr;
+    ptr=(int *)&a;
+    *ptr=20;
+    printf("%d ",a);
+    printf("%d ",*ptr);
+    return 0;
+}
+
+constant keyword:
+If it is intialied we cannot change the value .
+We can change the value through pointe after typecasting it.
+
