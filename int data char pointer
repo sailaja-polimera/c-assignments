@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+    int a=512;
+    char *ptr;
+    ptr=(char *)&a;
+    ptr[0]=16;
+    printf("%d ",ptr[1]);
+    printf("%d ",*ptr++);
+    printf("%d ",*ptr);
+    printf("%d",a);
+    return 0;
+}
+
+
+
+
+
+
+#include <stdio.h>
+int main()
+{
+    int a=512;
+    int *ptr;
+    ptr=(int *)&a;
+    ptr[0]=16;
+    printf("%d ",ptr[1]);
+    printf("%d ",*ptr++);
+    printf("%d ",*ptr);
+    printf("%d",a);
+    return 0;
+}
